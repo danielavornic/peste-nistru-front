@@ -21,7 +21,10 @@
     "newChat": "New Chat",
     "forums": "Forums",
     "register": "Register",
-    "login": "Login"
+    "login": "Login",
+    "settings": "Settings",
+    "logout": "Logout",
+    "profile": "Profile"
   },
   "register": {
     "title": "Register",
@@ -30,5 +33,17 @@
     "mpass": "Register with mPass",
     "haveAccount": "Already have an account?",
     "login": "Login"
+  },
+  "profile": {
+    "completeProfile": "Complete Profile",
+    "completeProfileDescription": "Complete your profile to participate in events and initiatives.",
+    "name": "First Name",
+    "surname": "Last Name",
+    "birthDate": "Date of Birth",
+    "interests": "Interests",
+    "region": "Region",
+    "save": "Save",
+    "agree": "I agree to the",
+    "terms": "Terms and Conditions for personal data processing"
   }
 }

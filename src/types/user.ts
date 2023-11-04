@@ -6,5 +6,7 @@ export interface User {
   phone?: string;
   token?: string;
   hasMPass?: boolean;
-  location?: string;
+  region?: string;
+  birthDate?: Date;
+  interests?: string[];
 }

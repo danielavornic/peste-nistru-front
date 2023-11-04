@@ -21,7 +21,10 @@
     "newChat": "Chat nou",
     "forums": "Forumuri",
     "register": "Înregistrare",
-    "login": "Logare"
+    "login": "Logare",
+    "settings": "Setări",
+    "logout": "Deconectare",
+    "profile": "Profil"
   },
   "register": {
     "title": "Înregistrare",
@@ -30,5 +33,17 @@
     "mpass": "Înregistrează-te prin mPass",
     "haveAccount": "Ai deja un cont?",
     "login": "Loghează-te"
+  },
+  "profile": {
+    "completeProfile": "Completează profilul",
+    "completeProfileDescription": "Completează profilul pentru a putea participa la evenimente și inițiative.",
+    "name": "Nume",
+    "surname": "Prenume",
+    "birthDate": "Data nașterii",
+    "interests": "Interese",
+    "region": "Regiune",
+    "save": "Salvează",
+    "agree": "Sunt de acord cu",
+    "terms": "Termenii și condițiile privind prelucrarea datelor personale"
   }
 }

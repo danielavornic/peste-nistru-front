@@ -11,7 +11,14 @@ const MPass = () => {
   const handleClick = () => {
     if (img === "/images/mpass-screen-filled.png") {
       // TODO: add  axios login
-      setUser({ name: "MPass", id: 123 });
+      setUser({
+        id: 1,
+        name: "Daniela",
+        surname: "Vornic",
+        region: "mun. Chişinău",
+        birthDate: new Date("2004-01-23"),
+        hasMPass: true,
+      });
       push("/profile/complete");
     } else {
       setImg("/images/mpass-screen-filled.png");

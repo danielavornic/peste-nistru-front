@@ -7,6 +7,11 @@ import {
   Flex,
   HStack,
   IconButton,
+  Menu,
+  MenuButton,
+  MenuDivider,
+  MenuItem,
+  MenuList,
   VStack,
   VisuallyHidden,
   chakra,
@@ -46,7 +51,7 @@ const menuLinks = [
 export const Header = () => {
   const t = useTranslations("common");
 
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
   const mobileNav = useDisclosure();
   const router = useRouter();
 
@@ -180,7 +185,23 @@ export const Header = () => {
                   <VisuallyHidden>Notifications</VisuallyHidden>
                 </chakra.a>
 
-                <Avatar size="sm" name="Dan Abrahmov" src="https://bit.ly/dan-abramov" />
+                <Menu>
+                  <MenuButton>
+                    <Avatar size="sm" bg="brand.500" color="white" name="Daniela Vornic" />
+                  </MenuButton>
+                  <MenuList>
+                    <MenuItem>
+                      <Link href="/profile/complete">{t("profile")}</Link>
+                    </MenuItem>
+                    <MenuItem>
+                      <Link href="/settings">{t("settings")}</Link>
+                    </MenuItem>
+                    <MenuDivider />
+                    <MenuItem onClick={logout}>
+                      <Link href="/">{t("logout")}</Link>
+                    </MenuItem>
+                  </MenuList>
+                </Menu>
               </>
             ) : (
               <>

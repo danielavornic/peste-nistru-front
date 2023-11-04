@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { NextIntlClientProvider } from "next-intl";
 import type { AppProps } from "next/app";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { MultiSelectTheme } from "chakra-multiselect";
 import { AuthProvider } from "@/context";
 
 import "@fontsource/open-sans/400.css";
@@ -34,6 +35,9 @@ const theme = extendTheme({
   fonts: {
     heading: `'Poppins', sans-serif`,
     body: `'Open Sans', sans-serif`,
+  },
+  components: {
+    MultiSelect: MultiSelectTheme,
   },
 });
 
