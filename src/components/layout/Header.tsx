@@ -1,3 +1,4 @@
+import { useAuth } from "@/hooks";
 import {
   Avatar,
   Box,
@@ -41,6 +42,7 @@ const menuLinks = [
 ];
 
 export const Header = () => {
+  const { user } = useAuth();
   const mobileNav = useDisclosure();
   const router = useRouter();
 
@@ -147,29 +149,48 @@ export const Header = () => {
             </HStack>
           </HStack>
           <HStack spacing={3} display={mobileNav.isOpen ? "none" : "flex"} alignItems="center">
-            <Button colorScheme="brand" leftIcon={<BsPlus />}>
-              Chat nou
-            </Button>
+            {user ? (
+              <>
+                <Link href="/chat/new">
+                  <Button colorScheme="brand" leftIcon={<BsPlus />}>
+                    Chat nou
+                  </Button>
+                </Link>
 
-            <chakra.a
-              p={3}
-              color="gray.800"
-              _dark={{
-                color: "inherit",
-              }}
-              rounded="sm"
-              _hover={{
-                color: "gray.800",
-                _dark: {
-                  color: "gray.600",
-                },
-              }}
-            >
-              <AiFillBell />
-              <VisuallyHidden>Notifications</VisuallyHidden>
-            </chakra.a>
+                <chakra.a
+                  p={3}
+                  color="gray.800"
+                  _dark={{
+                    color: "inherit",
+                  }}
+                  rounded="sm"
+                  _hover={{
+                    color: "gray.800",
+                    _dark: {
+                      color: "gray.600",
+                    },
+                  }}
+                >
+                  <AiFillBell />
+                  <VisuallyHidden>Notifications</VisuallyHidden>
+                </chakra.a>
 
-            <Avatar size="sm" name="Dan Abrahmov" src="https://bit.ly/dan-abramov" />
+                <Avatar size="sm" name="Dan Abrahmov" src="https://bit.ly/dan-abramov" />
+              </>
+            ) : (
+              <>
+                <Link href="/register">
+                  <Button variant="ghost" size="sm" colorScheme="brand">
+                    Înregistrare
+                  </Button>
+                </Link>
+                <Link href="/login">
+                  <Button colorScheme="brand" size="sm">
+                    Logare
+                  </Button>
+                </Link>
+              </>
+            )}
           </HStack>
         </Flex>
       </chakra.header>

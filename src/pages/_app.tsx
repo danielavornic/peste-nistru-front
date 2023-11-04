@@ -8,6 +8,7 @@ import "@fontsource/open-sans/600.css";
 import "@fontsource/open-sans/700.css";
 import "@fontsource/poppins/500.css";
 import "@fontsource/poppins/600.css";
+import { AuthProvider } from "@/context";
 
 const theme = extendTheme({
   colors: {
@@ -33,7 +34,9 @@ const theme = extendTheme({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
+      <AuthProvider>
+        <Component {...pageProps} />
+      </AuthProvider>
     </ChakraProvider>
   );
 }
