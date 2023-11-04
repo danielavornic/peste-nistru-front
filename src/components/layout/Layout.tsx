@@ -6,13 +6,19 @@ import { Container, VStack } from "@chakra-ui/react";
 interface LayoutProps {
   title?: string;
   description?: string;
+  full?: boolean;
 }
 
 const DEFAULT_TITLE = "Dialoguri Peste Nistru";
 const DEFAULT_DESCRIPTION =
   "Dialoguri Peste Nistru este un proiect care își propune să unească voci din ambele maluri ale Nistrului într-un dialog constructiv, pentru a găsi soluții comune la problemele cu care se confruntă societatea din Republica Moldova.";
 
-export const Layout = ({ title, description, children }: PropsWithChildren<LayoutProps>) => {
+export const Layout = ({
+  title,
+  description,
+  children,
+  full = false,
+}: PropsWithChildren<LayoutProps>) => {
   return (
     <>
       <Head>
@@ -32,15 +38,16 @@ export const Layout = ({ title, description, children }: PropsWithChildren<Layou
       >
         <Header />
         <Container
-          maxW={["container.sm", "container.md", "container.lg", "8xl"]}
+          maxW={full ? "full" : ["container.sm", "container.md", "container.lg", "8xl"]}
           h="full"
           flex="1"
-          py={20}
+          py={full ? 0 : 20}
+          px={full ? 0 : [4, 8, 12, 16]}
           as="main"
         >
           {children}
         </Container>
-        <Footer />
+        {!full && <Footer />}
       </VStack>
     </>
   );

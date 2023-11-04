@@ -93,11 +93,10 @@ const CompleteProfile = () => {
   const defaultValues = {
     name: user?.name,
     surname: user?.surname,
-    birthDate: user?.birthDate,
+    birthDate: new Date("2004-01-23"),
     interests: user?.interests,
     region: user?.region,
   };
-
   const [date, setDate] = useState(defaultValues.birthDate);
   const [terms, setTerms] = useState(false);
   const [region, setRegion] = useState(defaultValues.region);

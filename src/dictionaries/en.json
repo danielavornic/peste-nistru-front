@@ -45,5 +45,14 @@
     "save": "Save",
     "agree": "I agree to the",
     "terms": "Terms and Conditions for personal data processing"
+  },
+  "chat": {
+    "title": "Chat",
+    "chats": "Chats",
+    "myChats": "My Chats",
+    "startChat": "Start a Chat",
+    "startChatDescription": "Communicate with other participants from the other side of the Dniester River.",
+    "noChats": "You have no chats.",
+    "start": "Start"
   }
 }

@@ -45,5 +45,14 @@
     "save": "Salvează",
     "agree": "Sunt de acord cu",
     "terms": "Termenii și condițiile privind prelucrarea datelor personale"
+  },
+  "chat": {
+    "title": "Chat",
+    "chats": "Conversații",
+    "myChats": "Conversațiile mele",
+    "startChat": "Începe o conversație",
+    "startChatDescription": "Comunică cu alți participanți de pe celălalt mal al Nistrului.",
+    "noChats": "Nu ai nicio conversație.",
+    "start": "Începe"
   }
 }
