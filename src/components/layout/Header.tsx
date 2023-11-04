@@ -17,31 +17,35 @@ import { useRouter } from "next/router";
 import React from "react";
 import { AiFillHome, AiFillBell, AiOutlineMenu } from "react-icons/ai";
 import { BsPlus, BsFillCameraVideoFill, BsInboxesFill, BsChatLeftQuoteFill } from "react-icons/bs";
+import { LanguageSwitcher } from "..";
+import { useTranslations } from "next-intl";
 
 const menuLinks = [
   {
-    text: "Acasă",
+    text: "home",
     path: "/",
     icon: <AiFillHome />,
   },
   {
-    text: "Chat",
+    text: "chat",
     path: "/chat",
     icon: <BsInboxesFill />,
   },
   {
-    text: "Evenimente",
+    text: "events",
     path: "/events",
     icon: <BsFillCameraVideoFill />,
   },
   {
-    text: "Forumuri",
+    text: "forums",
     path: "/forums",
     icon: <BsChatLeftQuoteFill />,
   },
 ];
 
 export const Header = () => {
+  const t = useTranslations("common");
+
   const { user } = useAuth();
   const mobileNav = useDisclosure();
   const router = useRouter();
@@ -111,7 +115,7 @@ export const Header = () => {
                         size="sm"
                         colorScheme={isActive ? "brand" : undefined}
                       >
-                        {link.text}
+                        {t(link.text)}
                       </Button>
                     </Link>
                   );
@@ -141,7 +145,7 @@ export const Header = () => {
                       leftIcon={link.icon}
                       size="sm"
                     >
-                      {link.text}
+                      {t(link.text)}
                     </Button>
                   </Link>
                 );
@@ -149,11 +153,12 @@ export const Header = () => {
             </HStack>
           </HStack>
           <HStack spacing={3} display={mobileNav.isOpen ? "none" : "flex"} alignItems="center">
+            <LanguageSwitcher />
             {user ? (
               <>
                 <Link href="/chat/new">
-                  <Button colorScheme="brand" leftIcon={<BsPlus />}>
-                    Chat nou
+                  <Button colorScheme="brand" size="sm" leftIcon={<BsPlus />}>
+                    {t("newChat")}
                   </Button>
                 </Link>
 
@@ -181,12 +186,12 @@ export const Header = () => {
               <>
                 <Link href="/register">
                   <Button variant="ghost" size="sm" colorScheme="brand">
-                    Înregistrare
+                    {t("register")}
                   </Button>
                 </Link>
                 <Link href="/login">
                   <Button colorScheme="brand" size="sm">
-                    Logare
+                    {t("login")}
                   </Button>
                 </Link>
               </>

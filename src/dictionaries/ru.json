@@ -1,0 +1,26 @@
+{
+  "common": {
+    "aboutProject": "О проекте",
+    "events": "События",
+    "resourcesAndStudies": "Ресурсы и исследования",
+    "participation": "Участие",
+    "initiativeRegistration": "Регистрация инициатив",
+    "forum": "Форум",
+    "volunteering": "Волонтерство",
+    "documentation": "Документация",
+    "articles": "Статьи",
+    "reports": "Отчеты",
+    "analyses": "Анализы",
+    "contact": "Контакты",
+    "team": "Команда",
+    "support": "Поддержка",
+    "feedback": "Обратная связь",
+    "rightsReserved": "Все права защищены.",
+    "home": "Главная",
+    "chat": "Чат",
+    "newChat": "Новый чат",
+    "forums": "Форумы",
+    "register": "Регистрация",
+    "login": "Вход"
+  }
+}

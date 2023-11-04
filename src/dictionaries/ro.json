@@ -1,0 +1,26 @@
+{
+  "common": {
+    "aboutProject": "Despre Proiect",
+    "events": "Evenimente",
+    "resourcesAndStudies": "Resurse și Studii",
+    "participation": "Participare",
+    "initiativeRegistration": "Înscriere inițiative",
+    "forum": "Forum",
+    "volunteering": "Voluntariat",
+    "documentation": "Documentare",
+    "articles": "Articole",
+    "reports": "Rapoarte",
+    "analyses": "Analize",
+    "contact": "Contact",
+    "team": "Echipa",
+    "support": "Suport",
+    "feedback": "Feedback",
+    "rightsReserved": "Toate drepturile rezervate.",
+    "home": "Acasă",
+    "chat": "Chat",
+    "newChat": "Chat nou",
+    "forums": "Forumuri",
+    "register": "Înregistrare",
+    "login": "Logare"
+  }
+}

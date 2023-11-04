@@ -1,0 +1,26 @@
+{
+  "common": {
+    "aboutProject": "About Project",
+    "events": "Events",
+    "resourcesAndStudies": "Resources and Studies",
+    "participation": "Participation",
+    "initiativeRegistration": "Initiative Registration",
+    "forum": "Forum",
+    "volunteering": "Volunteering",
+    "documentation": "Documentation",
+    "articles": "Articles",
+    "reports": "Reports",
+    "analyses": "Analyses",
+    "contact": "Contact",
+    "team": "Team",
+    "support": "Support",
+    "feedback": "Feedback",
+    "rightsReserved": "All rights reserved.",
+    "home": "Home",
+    "chat": "Chat",
+    "newChat": "New Chat",
+    "forums": "Forums",
+    "register": "Register",
+    "login": "Login"
+  }
+}

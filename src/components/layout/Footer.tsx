@@ -1,6 +1,10 @@
 import { Box, Container, Grid, Stack, Text } from "@chakra-ui/react";
+import { useTranslations } from "next-intl";
 
 export const Footer = () => {
+  const t = useTranslations("common");
+  console.log("t", t("aboutProject"));
+
   return (
     <Box borderTop="1px solid" borderColor="gray.200">
       <Container as={Stack} maxW={"8xl"} py={10}>
@@ -14,62 +18,62 @@ export const Footer = () => {
               Dialoguri Peste Nistru
             </Text>
             <Text as="a" href="#" _hover={{ textDecoration: "underline" }}>
-              Despre Proiect
+              {t("aboutProject")}
             </Text>
             <Text as="a" href="#" _hover={{ textDecoration: "underline" }}>
-              Evenimente
+              {t("events")}
             </Text>
             <Text as="a" href="#" _hover={{ textDecoration: "underline" }}>
-              Resurse și Studii
+              {t("resourcesAndStudies")}
             </Text>
           </Stack>
           <Stack align={"flex-start"}>
             <Text fontWeight={"500"} fontSize={"lg"} mb={2}>
-              Participare
+              {t("participation")}
             </Text>
             <Text as="a" href="#" _hover={{ textDecoration: "underline" }}>
-              Înscriere inițiative
+              {t("initiativeRegistration")}
             </Text>
             <Text as="a" href="#" _hover={{ textDecoration: "underline" }}>
-              Forum
+              {t("forum")}
             </Text>
             <Text as="a" href="#" _hover={{ textDecoration: "underline" }}>
-              Voluntariat
+              {t("volunteering")}
             </Text>
           </Stack>
           <Stack align={"flex-start"}>
             <Text fontWeight={"500"} fontSize={"lg"} mb={2}>
-              Documentare
+              {t("documentation")}
             </Text>
             <Text as="a" href="#" _hover={{ textDecoration: "underline" }}>
-              Articole
+              {t("articles")}
             </Text>
             <Text as="a" href="#" _hover={{ textDecoration: "underline" }}>
-              Rapoarte
+              {t("reports")}
             </Text>
             <Text as="a" href="#" _hover={{ textDecoration: "underline" }}>
-              Analize
+              {t("analysis")}
             </Text>
           </Stack>
           <Stack align={"flex-start"}>
             <Text fontWeight={"500"} fontSize={"lg"} mb={2}>
-              Contact
+              {t("contact")}
             </Text>
             <Text as="a" href="#" _hover={{ textDecoration: "underline" }}>
-              Echipa
+              {t("team")}
             </Text>
             <Text as="a" href="#" _hover={{ textDecoration: "underline" }}>
-              Suport
+              {t("support")}
             </Text>
             <Text as="a" href="#" _hover={{ textDecoration: "underline" }}>
-              Feedback
+              {t("feedback")}
             </Text>
           </Stack>
         </Grid>
         <Stack pt={6} alignItems={"center"} borderTop={"1px solid"} borderColor="gray.200">
           <img src="/logo.png" width="100" alt="logo" />
           <Text pt={3}>
-            © {new Date().getFullYear()} Dialoguri Peste Nistru. Toate drepturile rezervate.
+            © {new Date().getFullYear()} Dialoguri Peste Nistru. {t("rightsReserved")}
           </Text>
         </Stack>
       </Container>

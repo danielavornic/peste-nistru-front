@@ -1,6 +1,9 @@
 import "@/styles/globals.css";
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { useRouter } from "next/router";
+import { NextIntlClientProvider } from "next-intl";
 import type { AppProps } from "next/app";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { AuthProvider } from "@/context";
 
 import "@fontsource/open-sans/400.css";
 import "@fontsource/open-sans/500.css";
@@ -8,7 +11,10 @@ import "@fontsource/open-sans/600.css";
 import "@fontsource/open-sans/700.css";
 import "@fontsource/poppins/500.css";
 import "@fontsource/poppins/600.css";
-import { AuthProvider } from "@/context";
+
+import ro from "@/dictionaries/ro.json";
+import ru from "@/dictionaries/ru.json";
+import en from "@/dictionaries/en.json";
 
 const theme = extendTheme({
   colors: {
@@ -31,12 +37,19 @@ const theme = extendTheme({
   },
 });
 
-export default function App({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
+  const { locale } = useRouter();
+  const messages = locale === "en" ? en : locale === "ru" ? ru : ro;
+
   return (
-    <ChakraProvider theme={theme}>
-      <AuthProvider>
-        <Component {...pageProps} />
-      </AuthProvider>
-    </ChakraProvider>
+    <NextIntlClientProvider messages={messages}>
+      <ChakraProvider theme={theme}>
+        <AuthProvider>
+          <Component {...pageProps} />
+        </AuthProvider>
+      </ChakraProvider>
+    </NextIntlClientProvider>
   );
 }
+
+export default MyApp;
