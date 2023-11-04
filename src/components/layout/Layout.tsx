@@ -35,7 +35,7 @@ export const Layout = ({ title, description, children }: PropsWithChildren<Layou
           maxW={["container.sm", "container.md", "container.lg", "8xl"]}
           h="full"
           flex="1"
-          py={10}
+          py={20}
           as="main"
         >
           {children}

@@ -22,5 +22,13 @@
     "forums": "Forums",
     "register": "Register",
     "login": "Login"
+  },
+  "register": {
+    "title": "Register",
+    "google": "Sign up with Google",
+    "phone": "Register by Phone",
+    "mpass": "Register with mPass",
+    "haveAccount": "Already have an account?",
+    "login": "Login"
   }
 }

@@ -52,7 +52,7 @@ export const Footer = () => {
               {t("reports")}
             </Text>
             <Text as="a" href="#" _hover={{ textDecoration: "underline" }}>
-              {t("analysis")}
+              {t("analyses")}
             </Text>
           </Stack>
           <Stack align={"flex-start"}>

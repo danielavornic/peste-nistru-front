@@ -22,5 +22,13 @@
     "forums": "Forumuri",
     "register": "Înregistrare",
     "login": "Logare"
+  },
+  "register": {
+    "title": "Înregistrare",
+    "google": "Conectează-te cu Google",
+    "phone": "Înregistrează-te cu telefonul",
+    "mpass": "Înregistrează-te prin mPass",
+    "haveAccount": "Ai deja un cont?",
+    "login": "Loghează-te"
   }
 }

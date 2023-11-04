@@ -22,5 +22,13 @@
     "forums": "Форумы",
     "register": "Регистрация",
     "login": "Вход"
+  },
+  "register": {
+    "title": "Регистрация",
+    "google": "Войти через Google",
+    "phone": "Войти через телефон",
+    "mpass": "Войти через MPass",
+    "haveAccount": "Уже есть аккаунт?",
+    "login": "Войти"
   }
 }
