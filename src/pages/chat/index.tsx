@@ -9,17 +9,8 @@ const Chat = () => {
 
   return (
     <ChatLayout title={t("title")}>
-      <Flex
-        w="100%"
-        h="100%"
-        bg="white"
-        p={8}
-        rounded="md"
-        alignItems="center"
-        justifyContent="center"
-      >
+      <Flex w="100%" h="100%" p={8} rounded="md" alignItems="center" justifyContent="center">
         <VStack spacing={4} alignItems="center">
-          {/* <PiWechatLogoLight /> */}
           <Icon as={PiWechatLogoLight} w={28} h={28} color="brand.500" mb={8} mt={-10} />
           <Heading as="h1" size="xl">
             {t("startChat")}

@@ -53,6 +53,7 @@
     "startChat": "Start a Chat",
     "startChatDescription": "Communicate with other participants from the other side of the Dniester River.",
     "noChats": "You have no chats.",
-    "start": "Start"
+    "start": "Start",
+    "searching": "Searching"
   }
 }

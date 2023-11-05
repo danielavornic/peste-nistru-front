@@ -53,6 +53,9 @@
     "startChat": "Începe o conversație",
     "startChatDescription": "Comunică cu alți participanți de pe celălalt mal al Nistrului.",
     "noChats": "Nu ai nicio conversație.",
-    "start": "Începe"
+    "start": "Începe",
+    "lookingForPeople": "Căutăm persoane pentru a începe o conversație",
+    "noMessages": "Nu ați trimis niciun mesaj.",
+    "startTyping": "Scrieți un mesaj..."
   }
 }
