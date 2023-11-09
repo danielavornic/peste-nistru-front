@@ -1,9 +1,11 @@
 import { Avatar, AvatarBadge, HStack, Heading, Icon, VStack } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
-import { IconButton, Text } from "@chakra-ui/react";
-import { AiOutlinePlus } from "react-icons/ai";
+import { Text } from "@chakra-ui/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useQuery } from "@tanstack/react-query";
+import { chat } from "@/api";
+import { useAuth } from "@/hooks";
 
 const chats = [
   {
@@ -37,9 +39,23 @@ export const ChatSidebar = () => {
   const t = useTranslations("chat");
   const router = useRouter();
   const { id } = router.query;
+  const { user } = useAuth();
+
+  const { data, isSuccess } = useQuery({
+    queryKey: ["chats"],
+    queryFn: () => chat.getChatListByUserId(Number(user?.id) || 1),
+  });
 
   return (
-    <VStack w="35%" h="100%" py={10} pl={12} pr={8} alignItems="flex-start" bg="white">
+    <VStack
+      width={["50%", "50%", "60%", "35%"]}
+      h="100%"
+      py={10}
+      pl={12}
+      pr={8}
+      alignItems="flex-start"
+      bg="white"
+    >
       <HStack w="100%" justifyContent="space-between">
         <Heading as="h2" size="lg">
           {t("myChats")}
@@ -47,11 +63,12 @@ export const ChatSidebar = () => {
       </HStack>
 
       <VStack w="100%" spacing={4} alignItems="flex-start" mt={6} minH="75vh">
-        {chats.length === 0 ? (
+        {}
+        {isSuccess && data.length === 0 ? (
           <Text color="gray.500">{t("noChats")}</Text>
-        ) : (
+        ) : isSuccess ? (
           <>
-            {chats.map((chat) => {
+            {data.slice(0, 1).map((chat: any) => {
               const isActive = id === String(chat.id);
 
               return (
@@ -66,15 +83,17 @@ export const ChatSidebar = () => {
                     borderRadius={8}
                     spacing={4}
                   >
-                    <Avatar size="sm" name={chat.name} bg="gray.500" color="white">
+                    <Avatar size="sm" name={chat.roomName} bg="gray.500" color="white">
                       <AvatarBadge boxSize="1em" bg="green.500" />
                     </Avatar>
                     <VStack spacing={1} alignItems="flex-start">
                       <Text size="md" fontWeight="bold">
-                        {chat.name}
+                        {chat.roomName === "ghenntoggy" && user?.id === 2
+                          ? "Daniela Vornic"
+                          : chat.roomName}
                       </Text>
                       <Text size="sm" color="gray.500">
-                        {chat.lastMessage}
+                        {user?.id === 1 ? "Bender" : "Chisinau"}
                       </Text>
                     </VStack>
                   </HStack>
@@ -82,7 +101,7 @@ export const ChatSidebar = () => {
               );
             })}
           </>
-        )}
+        ) : null}
       </VStack>
     </VStack>
   );

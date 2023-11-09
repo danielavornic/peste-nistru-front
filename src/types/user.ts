@@ -8,5 +8,5 @@ export interface User {
   hasMPass?: boolean;
   region?: string;
   birthDate?: Date;
-  interests?: string[];
+  interests?: number[];
 }

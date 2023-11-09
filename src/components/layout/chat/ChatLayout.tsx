@@ -18,7 +18,7 @@ export const ChatLayout = ({
   children,
 }: PropsWithChildren<ChatLayoutProps>) => {
   return (
-    <Layout title={title} full>
+    <Layout title={title} full hasFooter={false}>
       <HStack spacing={0} w="100%" h="100%" alignItems="flex-start" bg="#fbfdfe">
         <ChatSidebar />
         <Container
@@ -32,9 +32,7 @@ export const ChatLayout = ({
           flexDirection="column"
           justifyContent="space-between"
         >
-          {hasHeader && <ChatHeader title={title} description={headerDescription} />}
           {children}
-          {hasFooter && <ChatFooter />}
         </Container>
       </HStack>
     </Layout>

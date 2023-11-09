@@ -7,6 +7,7 @@ interface LayoutProps {
   title?: string;
   description?: string;
   full?: boolean;
+  hasFooter?: boolean;
 }
 
 const DEFAULT_TITLE = "Dialoguri Peste Nistru";
@@ -18,6 +19,7 @@ export const Layout = ({
   description,
   children,
   full = false,
+  hasFooter = true,
 }: PropsWithChildren<LayoutProps>) => {
   return (
     <>
@@ -47,7 +49,7 @@ export const Layout = ({
         >
           {children}
         </Container>
-        {!full && <Footer />}
+        {(!full || hasFooter) && <Footer />}
       </VStack>
     </>
   );

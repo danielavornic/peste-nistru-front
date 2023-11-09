@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { SingleDatepicker } from "chakra-dayzed-datepicker";
@@ -19,29 +19,8 @@ import {
 import { useAuth } from "@/hooks";
 import { Layout } from "@/components";
 import { useRouter } from "next/router";
-
-const defaultInterests = [
-  "Muzică",
-  "Sport",
-  "Artă",
-  "Filme",
-  "Cărți",
-  "Gastronomie",
-  "Istorie",
-  "Tehnologie",
-  "Educație",
-  "Mediu",
-  "Călătorii",
-  "Fotografie",
-  "Modă",
-  "Poezie",
-  "Știință",
-  "Sănătate",
-  "Sustenabilitate",
-  "Dans",
-  "Teatru",
-  "Voluntariat",
-];
+import { interests } from "@/api";
+import { useQuery } from "@tanstack/react-query";
 
 const defaultRegions = [
   "mun. Chişinău",
@@ -88,29 +67,47 @@ const defaultRegions = [
 const CompleteProfile = () => {
   const t = useTranslations("profile");
   const { user, setUser } = useAuth();
-  const { push } = useRouter();
+  const { push, locale } = useRouter();
+
+  const { data, isSuccess } = useQuery({
+    queryKey: ["interests"],
+    queryFn: () => interests.getList(),
+  });
 
   const defaultValues = {
     name: user?.name,
     surname: user?.surname,
     birthDate: new Date("2004-01-23"),
-    interests: user?.interests,
+    interests: user?.interests || [1],
     region: user?.region,
   };
+
   const [date, setDate] = useState(defaultValues.birthDate);
   const [terms, setTerms] = useState(false);
-  const [region, setRegion] = useState(defaultValues.region);
-  const { value, options, onChange } = useMultiSelect({
-    value: defaultValues.interests,
-    options: defaultInterests,
-  });
+  const [region, setRegion] = useState("mun. Chişinău");
   const { register, handleSubmit } = useForm({
     mode: "onChange",
     defaultValues,
   });
 
+  const [selectInterests, setSelectInterests] = useState([]);
+
+  useEffect(() => {
+    if (data && isSuccess && selectInterests.length === 0) {
+      setSelectInterests(
+        data
+          .map((item: any) =>
+            defaultValues.interests.includes(item.id)
+              ? { label: item.i18n[locale || "ro"], value: item.id }
+              : null,
+          )
+          .filter((item: any) => item !== null),
+      );
+    }
+  }, [data]);
+
   const onSubmit = (data: any) => {
-    setUser({ ...user, ...data, interests: value.map((item: any) => item.value) });
+    setUser({ ...user, ...data, interests: selectInterests.map((item: any) => item.value) });
     push("/");
   };
 
@@ -178,8 +175,11 @@ const CompleteProfile = () => {
             <FormLabel>{t("region")}</FormLabel>
             <MultiSelect
               id="region"
-              options={defaultRegions.map((region) => ({ label: region, value: region }))}
-              value={region}
+              options={defaultRegions.map((item) => ({
+                label: item,
+                value: item,
+              }))}
+              value={{ label: region, value: region }}
               onChange={setRegion}
               single
             />
@@ -187,10 +187,17 @@ const CompleteProfile = () => {
 
           <FormControl id="interests">
             <MultiSelect
-              options={options}
-              value={value}
+              options={
+                isSuccess
+                  ? data.map((item: any) => ({
+                      label: item.i18n[locale || "ro"],
+                      value: item.i18n[locale || "ro"],
+                    }))
+                  : [{ label: "Oricare", value: 1 }]
+              }
+              value={selectInterests}
+              onChange={(value: any) => setSelectInterests(value)}
               label={t("interests")}
-              onChange={onChange}
               colorScheme="brand"
               props={{
                 button: {
@@ -209,13 +216,7 @@ const CompleteProfile = () => {
             </Text>
           </Checkbox>
 
-          <Button
-            type="submit"
-            colorScheme="brand"
-            size="lg"
-            w="full"
-            isDisabled={!date || !value?.length || !terms}
-          >
+          <Button type="submit" colorScheme="brand" size="lg" w="full" isDisabled={!date || !terms}>
             {t("save")}
           </Button>
         </VStack>

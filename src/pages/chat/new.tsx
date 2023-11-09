@@ -28,7 +28,7 @@ const NewChat = () => {
         backgroundColor="#fbfdfe"
       >
         <VStack spacing={4} alignItems="center" maxW="600px" mt={-10}>
-          <PuffLoader color="#0EB085" size={90} />
+          <PuffLoader color="#3182ce" size={90} />
           <Heading as="h1" size="xl" mt={8} textAlign="center">
             {t("lookingForPeople")}...
           </Heading>

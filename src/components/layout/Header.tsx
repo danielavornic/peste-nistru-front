@@ -110,7 +110,10 @@ export const Header = () => {
                   onClick={mobileNav.onClose}
                 />
                 {menuLinks.map((link, idx) => {
-                  const isActive = router.pathname === link.path;
+                  const isActive =
+                    link.path !== "/"
+                      ? router.pathname.startsWith(link.path)
+                      : router.pathname === link.path;
 
                   return (
                     <Link href={link.path} key={idx}>
@@ -140,7 +143,10 @@ export const Header = () => {
               }}
             >
               {menuLinks.map((link, idx) => {
-                const isActive = router.pathname === link.path;
+                const isActive =
+                  link.path !== "/"
+                    ? router.pathname.startsWith(link.path)
+                    : router.pathname === link.path;
 
                 return (
                   <Link href={link.path} key={idx}>
@@ -162,7 +168,7 @@ export const Header = () => {
             {user ? (
               <>
                 <Link href="/chat/new">
-                  <Button colorScheme="brand" size="sm" leftIcon={<BsPlus />}>
+                  <Button colorScheme="blue" size="md" leftIcon={<BsPlus />}>
                     {t("newChat")}
                   </Button>
                 </Link>
@@ -187,7 +193,7 @@ export const Header = () => {
 
                 <Menu>
                   <MenuButton>
-                    <Avatar size="sm" bg="brand.500" color="white" name="Daniela Vornic" />
+                    <Avatar size="sm" bg="brand.500" color="white" name={user?.name} />
                   </MenuButton>
                   <MenuList>
                     <MenuItem>

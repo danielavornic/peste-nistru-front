@@ -1,17 +1,21 @@
 import { useAuth } from "@/hooks";
 import { HStack, IconButton, Input } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import { useState } from "react";
 import { BsFillSendFill } from "react-icons/bs";
 
-const ChatFooter = () => {
+const ChatFooter = ({ sendMessage, message, setMessage }: any) => {
   const { user } = useAuth();
-  const { query } = useRouter();
-  const [message, setMessage] = useState("");
+  const { query, locale } = useRouter();
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    alert(JSON.stringify({ message, senderId: user?.id, chatRoomId: query.id }));
+
+    sendMessage({
+      roomId: Number(query.id),
+      senderId: Number(user?.id),
+      message,
+      language: locale === "en" ? "en-GB" : locale,
+    });
 
     setMessage("");
   };

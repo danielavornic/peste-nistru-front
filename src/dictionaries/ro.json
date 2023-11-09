@@ -24,7 +24,8 @@
     "login": "Logare",
     "settings": "Setări",
     "logout": "Deconectare",
-    "profile": "Profil"
+    "profile": "Profil",
+    "learnMore": "Află mai multe"
   },
   "register": {
     "title": "Înregistrare",
@@ -57,5 +58,33 @@
     "lookingForPeople": "Căutăm persoane pentru a începe o conversație",
     "noMessages": "Nu ați trimis niciun mesaj.",
     "startTyping": "Scrieți un mesaj..."
+  },
+  "home": {
+    "platformDescription": "Platformă pentru a conecta oamenii de ambele maluri ale râului Nistru",
+    "changeCommunityFuture": "Construiește un viitor pașnic",
+    "changeCommunityFuture2": "pentru Moldova!",
+    "aboutUs": "Despre noi",
+    "aboutUsDescription": "Află mai multe despre misiunea și viziunea noastră de a promova pacea și comunicarea în Moldova.",
+    "howItWorks": "Cum Funcționează",
+    "howItWorksDescription": "Descoperă procesul pas cu pas de utilizare a platformei noastre pentru a conecta oamenii de pe ambele maluri ale râului Nistru."
+  },
+  "features": {
+    "userAuthentication": "Autentificare utilizator",
+    "profileCustomization": "Personalizarea profilului",
+    "basicProfileSetup": "Configurare de bază a profilului: Nume, interese, preferințe de limbă.",
+    "privacyOptions": "Opțiuni de confidențialitate pentru anonimat sau profile deschise.",
+    "realTimeMessaging": "Mesagerie în timp real între persoanele de pe malurile opuse",
+    "textBasedCommunication": "Interfață de comunicare bazată pe text.",
+    "deepLIntegration": "Integrare cu DeepL API pentru traducere în timp real.",
+    "eventsHub": "Hub evenimente (online și offline)",
+    "basicEventListings": "Liste de evenimente de bază: o listă simplă în stil de tablă de anunțuri cu evenimente viitoare.",
+    "eventDetails": "Detalii despre evenimente: evenimente cu link-uri către o vizualizare detaliată cu opțiunea de a confirma participarea printr-un formular simplu.",
+    "rsvpManagement": "Gestionarea confirmărilor pentru evenimente: creatorii de evenimente pot vizualiza și administra confirmările prin intermediul unei interfețe de bază.",
+    "forumDiscussionBoards": "Forumuri de discuții",
+    "predefinedTopics": "Teme predefinite pentru a iniția conversații.",
+    "moderationCapabilities": "Capabilități de moderare pentru administratori."
+  },
+  "events": {
+    "title": "Evenimente"
   }
 }

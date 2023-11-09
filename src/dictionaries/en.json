@@ -24,7 +24,8 @@
     "login": "Login",
     "settings": "Settings",
     "logout": "Logout",
-    "profile": "Profile"
+    "profile": "Profile",
+    "learnMore": "Learn More"
   },
   "register": {
     "title": "Register",
@@ -54,6 +55,37 @@
     "startChatDescription": "Communicate with other participants from the other side of the Dniester River.",
     "noChats": "You have no chats.",
     "start": "Start",
-    "searching": "Searching"
+    "searching": "Searching",
+    "noMessages": "You have not sent any messages.",
+    "startTyping": "Type a message...",
+    "lookingForPeople": "Looking for people to start a conversation"
+  },
+  "home": {
+    "platformDescription": "A platform to bridge communication between people from both banks of the Nistru River",
+    "changeCommunityFuture": "Build a peaceful future",
+    "changeCommunityFuture2": "and shape Moldova's tomorrow!",
+    "aboutUs": "About Us",
+    "aboutUsDescription": "Learn more about our mission and vision to promote peace and communication in Moldova.",
+    "howItWorks": "How It Works",
+    "howItWorksDescription": "Discover the step-by-step process of using our platform to connect people from both sides of the Nistru River."
+  },
+  "features": {
+    "userAuthentication": "User Authentication",
+    "profileCustomization": "Profile Customization",
+    "basicProfileSetup": "Basic profile setup: Name, interests, language preferences.",
+    "privacyOptions": "Privacy options for anonymity or open profiles.",
+    "realTimeMessaging": "Real-time Messaging between people on opposite banks",
+    "textBasedCommunication": "Text-based communication interface.",
+    "deepLIntegration": "Integration with DeepL API for real-time translation.",
+    "eventsHub": "Events Hub (online and offline)",
+    "basicEventListings": "Basic Event Listings: A simple bulletin-board-style list of upcoming events.",
+    "eventDetails": "Event Details: Clickable events that lead to a detailed view with an option to RSVP via a simple form.",
+    "rsvpManagement": "RSVP Management: Event creators can view and manage RSVPs through a basic backend interface.",
+    "forumDiscussionBoards": "Forum Discussion Boards",
+    "predefinedTopics": "Predefined topics to spark initial conversations.",
+    "moderationCapabilities": "Moderation capabilities for administrators."
+  },
+  "events": {
+    "title": "Events"
   }
 }

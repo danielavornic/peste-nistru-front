@@ -3,7 +3,6 @@ import { useTranslations } from "next-intl";
 
 export const Footer = () => {
   const t = useTranslations("common");
-  console.log("t", t("aboutProject"));
 
   return (
     <Box borderTop="1px solid" borderColor="gray.200">

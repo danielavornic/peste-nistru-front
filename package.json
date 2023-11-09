@@ -15,6 +15,8 @@
     "@emotion/styled": "^11.11.0",
     "@fontsource/open-sans": "^5.0.17",
     "@fontsource/poppins": "^5.0.8",
+    "@tanstack/react-query": "^5.7.0",
+    "axios": "^1.6.0",
     "chakra-dayzed-datepicker": "^0.2.10",
     "chakra-multiselect": "^0.4.6",
     "chakra-react-select": "^4.7.6",
@@ -30,12 +32,18 @@
     "react-hook-form": "^7.47.0",
     "react-i18next": "^13.3.1",
     "react-icons": "^4.11.0",
-    "react-spinners": "^0.13.8"
+    "react-spinners": "^0.13.8",
+    "react-stomp": "^5.1.0",
+    "react-use-websocket": "^3.0.0",
+    "socket.io-client": "^4.7.2",
+    "sockjs-client": "^1.6.1"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/sockjs-client": "^1.5.3",
+    "@types/stompjs": "^2.3.7",
     "@typescript-eslint/eslint-plugin": "^6.9.1",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
